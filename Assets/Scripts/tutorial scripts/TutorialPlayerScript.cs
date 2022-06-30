@@ -72,7 +72,7 @@ public class TutorialPlayerScript : MonoBehaviour
 
     public void Punch()
     {
-
+        attacking = true;
         originalRot = transform.localRotation;
         SetAttacking(true);
         pSFXC.PlaySwoosh();
@@ -91,7 +91,7 @@ public class TutorialPlayerScript : MonoBehaviour
 
     public void Kick()
     {
-
+        attacking = true;
         originalRot = transform.localRotation;
         SetAttacking(true);
         int p = Random.Range(1, 3);
@@ -222,6 +222,7 @@ public class TutorialPlayerScript : MonoBehaviour
     void AttackDone()
     {
         //transform.rotation = originalRot;
+        attacking = false;
         EnableMovement();
         playerAnim.SetBool("Fight", false);
     }
