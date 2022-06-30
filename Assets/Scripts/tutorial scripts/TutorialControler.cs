@@ -44,6 +44,7 @@ public class TutorialControler : MonoBehaviour
     Transform throwableObjects;
 
     public bool ObjectPickedUp = false;
+    bool hit=false;
     private void Start()
     {
         stage = TutorailStage.none;
@@ -157,7 +158,6 @@ public class TutorialControler : MonoBehaviour
 
     void LeaveGame()
     {
-
         instructions.text = ("Now head head outside and explore the metaverse").ToUpper();
         keys.gameObject.SetActive(false);
         panel.transform.DOScale(Vector3.one, 1f);
@@ -182,14 +182,40 @@ public class TutorialControler : MonoBehaviour
         }
     }
 
+    public void GetHit()
+    {
+        taskDone = false;
+        hit = true;
+        instructions.text = ("Hey! That hurts.").ToUpper();
+        keys.gameObject.SetActive(false);
+        panel.transform.DOScale(Vector3.one, 1f);
+        Invoke("TurnOffTutorial", 1.5f);
+    }
     void EndText()
     {
         panel.transform.DOScale(Vector3.zero, 1f).OnComplete(()=>keys.gameObject.SetActive(true));
+        if (hit == true)
+        {
+            Debug.Log(2);
+            hit = false;
+            if (stage == TutorailStage.Throw)
+            {
+                Invoke("ThrowTutorial",1f);
+            }
+            else
+            {
+                Invoke("LeaveGame",1f);
+            }
+        }
     }
     void TurnOffTutorial()
     {
         panel.transform.DOScale(Vector3.zero, 1f).OnComplete(() => keys.color = Color.white);
-        if (stage == TutorailStage.mouse)
+        if (hit)
+        {
+            Invoke("EndText", 2f);
+        }
+        else if (stage == TutorailStage.mouse)
         {
             stage = TutorailStage.none;
             Invoke("MovementTutorial", 2f);
@@ -242,6 +268,7 @@ public class TutorialControler : MonoBehaviour
             Invoke("LeaveGame", 2f);
 
         }
+        
     }
 
     void CheckTaskDone()

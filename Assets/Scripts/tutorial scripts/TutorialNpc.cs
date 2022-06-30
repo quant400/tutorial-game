@@ -17,12 +17,13 @@ public class TutorialNpc : MonoBehaviour
     Transform placeAfterEnterGym;
     [SerializeField]
     TutorialPlayerScript tps;
+    TutorialControler tC;
     Animator animNPC;
 
     bool following;
     bool noLongerFollow=false;
     bool movingToFront=false;
-        // Start is called before the first frame update
+    public bool hit;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -31,6 +32,7 @@ public class TutorialNpc : MonoBehaviour
         var imp = GameObject.FindGameObjectWithTag("ImpPlace").transform;
         placeAfterEnterGym = imp.GetChild(0);
         placeForCombatTutorial = imp.GetChild(1);
+        tC = GetComponentInChildren<TutorialControler>();
     }
 
     public void MoveToFront()
@@ -57,6 +59,26 @@ public class TutorialNpc : MonoBehaviour
     {
         transform.position = placeForCombatTutorial.position;
         transform.rotation = placeForCombatTutorial.rotation;
+    }
+    void GetHit()
+    {
+        hit = true;
+        animNPC.SetTrigger("Hit");
+        tC.GetHit();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+       
+        if (other.gameObject.CompareTag("Punch") || other.gameObject.CompareTag("Kick"))
+        {
+            Debug.Log(1);
+            if (other.gameObject.GetComponentInParent<TutorialPlayerScript>().GetAttacking())
+            {
+                other.gameObject.GetComponentInParent<TutorialPlayerScript>().SetAttacking(false);
+                GetHit();
+            }
+        }
     }
     void Update()
     {
