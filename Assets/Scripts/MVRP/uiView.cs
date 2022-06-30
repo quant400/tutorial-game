@@ -15,6 +15,7 @@ public class uiView : MonoBehaviour
     [SerializeField] GameObject resultsCanvas;
     [SerializeField] GameObject leaderBoeardCanvas;
     [SerializeField] GameObject startCanvas;
+    [SerializeField] GameObject nextGameCanvas;
 
 
     public Button loginBtn, PlayMode, Play, LeaderBoard, BackToCharacterSelection, Skip, tryout, backFromLeaderboard , tryagain;
@@ -141,6 +142,11 @@ public class uiView : MonoBehaviour
         }
     }
 
+
+    public void ActivateNectGame(games g)
+    {
+        nextGameCanvas.GetComponent<NextGameCanvasScript>().EnablePanel(g);
+    }
     public void SetTryAgain(bool state)
     {
         /*if(gameplayView.instance.GetSessions()<10)

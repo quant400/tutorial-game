@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum games
-{
-    chicken,
-    bear
-}
+
 public class ToOtherGame : MonoBehaviour
 {
     [SerializeField]

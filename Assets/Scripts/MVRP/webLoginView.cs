@@ -99,7 +99,7 @@ public class webLoginView : MonoBehaviour
         {
             t.gameObject.SetActive(false);
         }
-        //tryoutCanvas.SetActive(true);
+        transform.GetChild(transform.childCount-1).gameObject.SetActive(true);
         nftGetter.Skip();
     }
 

@@ -23,7 +23,14 @@ public class OpenDoor : MonoBehaviour
             if (!open)
             {
                 if (rotateDoor)
+                {
+                    if (other.transform.position.z > transform.position.z)
+                        inOrOut = true;
+                    else
+                        inOrOut = false;
                     OpenRotate();
+                }
+                   
                 else
                     Open();
             }
