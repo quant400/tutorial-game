@@ -30,7 +30,6 @@ public class NextGameCanvasScript : MonoBehaviour
     public void EnablePanel(games g)
     {
         var player = GameObject.FindGameObjectWithTag("Player");
-       
         //replace links later
         if (g == games.chicken)
         {
@@ -44,7 +43,6 @@ public class NextGameCanvasScript : MonoBehaviour
             SetLink("http://staging-play.cryptofightclub.io/fight-the-bear");
         }
         panel.DOScale(Vector3.one, 1f).OnComplete(() => Time.timeScale = 0);
-        
         player.GetComponent<StarterAssets.StarterAssetsInputs>().SetCursorLock(false);
     }
     public void DisablePanel()
