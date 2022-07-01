@@ -33,6 +33,7 @@ public class characterSelectionView : MonoBehaviour
     //for new screen
     [SerializeField]
     Transform[] charButtons;
+    bool[] avaliableColors = new bool[] { true, true, true, true, true };
     int currentStartIndex;
     //for skip
     bool skipping;
@@ -72,8 +73,14 @@ public class characterSelectionView : MonoBehaviour
          .Subscribe()
          .AddTo(this);
     }
-   
 
+    private void ResetAvalaibleColors()
+    {
+        for (int i = 0; i < avaliableColors.Length; i++)
+        {
+            avaliableColors[i] = true;
+        }
+    }
     public void MoveRight()
     {
          
@@ -126,6 +133,18 @@ public class characterSelectionView : MonoBehaviour
                 rightButton.gameObject.SetActive(true);
             DisplayChar(currentStartIndex);
         }
+    }
+
+    public int GetavaliableColor()
+    {
+        int c = UnityEngine.Random.Range(0, avaliableColors.Length);
+        if (avaliableColors[c] == true)
+        {
+            avaliableColors[c] = false;
+            return c;
+        }
+        else
+            return GetavaliableColor();
     }
     public void EnablePlay()
     {
@@ -232,6 +251,7 @@ public class characterSelectionView : MonoBehaviour
                 characterNFTMap[i + startingindex] = new NFTInfo { id = 175, name = name };
             }
         }
+        ResetAvalaibleColors();
     }
     void DisplayChar(int startingindex)
     {
@@ -249,6 +269,7 @@ public class characterSelectionView : MonoBehaviour
                 characterNFTMap[i+startingindex] = myNFT[i+startingindex];
             }
         }
+        ResetAvalaibleColors();
         tutorialGameModel.charactersSetted = true;
     }
     private void Done()
