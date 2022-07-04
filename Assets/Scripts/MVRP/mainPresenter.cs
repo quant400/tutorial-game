@@ -95,6 +95,7 @@ using UnityEngine.SceneManagement;
                 case tutorialGameModel.GameSteps.OnCharacterSelected:
                     uiView.goToMenu("characterSelected");
                     scenesView.loadSinglePlayerScene();
+                    gameplayView.instance.SpawnPlayer();
                     
                     break;
                 case tutorialGameModel.GameSteps.OnStartGame:

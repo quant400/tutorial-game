@@ -26,13 +26,18 @@ public class TutorialNpc : MonoBehaviour
     public bool hit;
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        tps = player.GetComponent<TutorialPlayerScript>();
         animNPC=GetComponent<Animator>();
         var imp = GameObject.FindGameObjectWithTag("ImpPlace").transform;
         placeAfterEnterGym = imp.GetChild(0);
         placeForCombatTutorial = imp.GetChild(1);
         tC = GetComponentInChildren<TutorialControler>();
+        Invoke("GetRefrences", 0.5f);
+    }
+    
+    void GetRefrences()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        tps = player.GetComponent<TutorialPlayerScript>();
     }
 
     public void MoveToFront()
@@ -82,7 +87,7 @@ public class TutorialNpc : MonoBehaviour
     }
     void Update()
     {
-        if (!movingToFront)
+        if (!movingToFront && player!=null)
         {
             if (Vector3.Distance(player.position, transform.position) > minDist && !noLongerFollow)
             {

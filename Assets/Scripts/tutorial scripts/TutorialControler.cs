@@ -49,11 +49,15 @@ public class TutorialControler : MonoBehaviour
     {
         stage = TutorailStage.none;
         Invoke("MouseTutorial", 1f);
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<TutorialPlayerScript>();
-        camToFace = player.transform.GetChild(0);
         tNCP = GetComponentInParent<TutorialNpc>();
-        player.GetComponent<ThirdPersonController>().enabled = false;
         toOtherGames.SetActive(false);
+        Invoke("GetRefrences",0.5f);
+    }
+    void GetRefrences()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<TutorialPlayerScript>();
+        player.GetComponent<ThirdPersonController>().enabled = false;
+        camToFace = player.transform.GetChild(0);
     }
     #region TutorialStarters
 
@@ -357,6 +361,7 @@ public class TutorialControler : MonoBehaviour
     private void LateUpdate()
     {
         //transform.LookAt(camToFace);
-        this.transform.LookAt(new Vector3(camToFace.position.x, this.transform.position.y, camToFace.position.z));
+        if(player!=null)
+            this.transform.LookAt(new Vector3(camToFace.position.x, this.transform.position.y, camToFace.position.z));
     }
 }

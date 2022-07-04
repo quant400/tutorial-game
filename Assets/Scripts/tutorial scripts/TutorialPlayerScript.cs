@@ -22,10 +22,14 @@ public class TutorialPlayerScript : MonoBehaviour
     Transform throwableObjectParent;
     public bool CloseToPick;
    
-    void Awake()
+    void Start()
     {
         playerAnim = GetComponent<Animator>();
         pSFXC = GetComponent<PlayerSFXController>();
+        Invoke("GetRefrences", 0.5f);
+    }
+    void GetRefrences()
+    {
         tC = GameObject.FindGameObjectWithTag("TutorialController").GetComponent<TutorialControler>();
     }
     public void EnableFightTutorial()
