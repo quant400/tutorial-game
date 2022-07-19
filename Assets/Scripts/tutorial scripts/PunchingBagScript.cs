@@ -34,7 +34,6 @@ public class PunchingBagScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.tag); 
         if(collision.gameObject.CompareTag("Punch")|| collision.gameObject.CompareTag("Kick"))
         {
             if (collision.gameObject.GetComponentInParent<TutorialPlayerScript>().GetAttacking())

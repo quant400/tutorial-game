@@ -270,7 +270,6 @@ public class TutorialControler : MonoBehaviour
 
         else if (stage == TutorailStage.Throw)
         {
-            Debug.Log(6);
             stage = TutorailStage.none;
             Invoke("LeaveGame", 2f);
 

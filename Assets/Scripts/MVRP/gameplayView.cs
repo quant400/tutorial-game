@@ -50,7 +50,6 @@ public class gameplayView : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        Debug.Log(1);
         string n = gameplayView.instance.chosenNFT.name;
         Debug.Log(chosenNFT.name);
         GameObject resource = Resources.Load(Path.Combine("SinglePlayerPrefabs/Characters", NameToSlugConvert(n))) as GameObject;
