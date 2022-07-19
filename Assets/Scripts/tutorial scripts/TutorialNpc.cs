@@ -56,7 +56,8 @@ public class TutorialNpc : MonoBehaviour
         animNPC.SetBool("Walk",true);
         if (!GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))
         {
-            Vector3 pos = new Vector3(player.transform.GetChild(1).position.x, 0, player.transform.GetChild(1).position.z) + player.transform.GetChild(1).forward * 10;
+            Debug.Log(player.transform.GetChild(0).forward);
+            Vector3 pos = new Vector3(player.transform.position.x, 0, player.transform.position.z) + new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z)*5;
             transform.DOMove(pos, 2f).OnComplete(() =>
             {
                 tps.EnableMovement();

@@ -242,7 +242,8 @@ public class TutorialControler : MonoBehaviour
             tNCP.MoveToFront();
             stage = TutorailStage.none;
             thingsToDisableAfterMovement.SetActive(false);
-            EnterGym();
+            Invoke("EnterGym", 2f);
+   
             
         }
 
