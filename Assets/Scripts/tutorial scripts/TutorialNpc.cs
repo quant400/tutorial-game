@@ -24,6 +24,11 @@ public class TutorialNpc : MonoBehaviour
     bool noLongerFollow=false;
     bool movingToFront=false;
     public bool hit;
+
+    //for testing 
+    Camera cam;
+    Plane[] planes;
+    Collider objCollider;
     void Start()
     {
         animNPC=GetComponent<Animator>();
@@ -38,21 +43,35 @@ public class TutorialNpc : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         tps = player.GetComponent<TutorialPlayerScript>();
+        cam = player.GetChild(0).GetComponent<Camera>();
+        planes = GeometryUtility.CalculateFrustumPlanes(cam);
+        objCollider = GetComponent<Collider>();
     }
 
     public void MoveToFront()
     {
         movingToFront = true;
         tps.DisableMovement();
+        planes = GeometryUtility.CalculateFrustumPlanes(cam);
         animNPC.SetBool("Walk",true);
-        Vector3 pos = player.transform.position + player.transform.forward * 5;
-        transform.DOMove(pos, 2f).OnComplete(() =>
+        if (!GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))
+        {
+            Vector3 pos = new Vector3(player.transform.GetChild(1).position.x, 0, player.transform.GetChild(1).position.z) + player.transform.GetChild(1).forward * 10;
+            transform.DOMove(pos, 2f).OnComplete(() =>
+            {
+                tps.EnableMovement();
+                transform.LookAt(player);
+                animNPC.SetBool("Walk", false);
+                movingToFront = false;
+            });
+        }
+        else
         {
             tps.EnableMovement();
             transform.LookAt(player);
             animNPC.SetBool("Walk", false);
             movingToFront = false;
-        });
+        }
     }
     public void InsideGym()
     {
