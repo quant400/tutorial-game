@@ -135,8 +135,8 @@ public class TutorialControler : MonoBehaviour
         taskDone = false;
         instructions.text = ("Some objects can be picked up  with the \"E\"key and thrown with the attack button").ToUpper();
         keys.sprite = pickUp;
-        throwableObjects.gameObject.SetActive(true);
-        panel.transform.DOScale(Vector3.one, 1f);
+        throwableObjects.gameObject.SetActive(true) ;
+        panel.transform.DOScale(Vector3.one, 1f).OnComplete(() => hit = false); ;
 
     }
 
@@ -147,7 +147,7 @@ public class TutorialControler : MonoBehaviour
         keys.gameObject.SetActive(false);
         panel.transform.DOScale(Vector3.one, 1f);
         Invoke("EndText", 2f);
-        tNCP.Invoke("InsideGym", 2f);
+        tNCP.Invoke("InsideGym", 2.5f);
 
     }
     public void EnterRing()
@@ -164,7 +164,7 @@ public class TutorialControler : MonoBehaviour
     {
         instructions.text = ("Now head head outside and explore the metaverse").ToUpper();
         keys.gameObject.SetActive(false);
-        panel.transform.DOScale(Vector3.one, 1f);
+        panel.transform.DOScale(Vector3.one, 1f).OnComplete(()=> hit = false);
         Invoke("EndText", 2f);
         toOtherGames.SetActive(true);
 
@@ -188,20 +188,21 @@ public class TutorialControler : MonoBehaviour
 
     public void GetHit()
     {
-        taskDone = false;
-        hit = true;
-        instructions.text = ("Hey! That hurts.").ToUpper();
-        keys.gameObject.SetActive(false);
-        panel.transform.DOScale(Vector3.one, 1f);
-        Invoke("TurnOffTutorial", 1.5f);
+        if (!hit)
+        {
+            taskDone = false;
+            hit = true;
+            instructions.text = ("Hey! That hurts.").ToUpper();
+            keys.gameObject.SetActive(false);
+            panel.transform.DOScale(Vector3.one, 1f);
+            Invoke("EndText", 1.5f);
+        }
     }
     void EndText()
     {
         panel.transform.DOScale(Vector3.zero, 1f).OnComplete(()=>keys.gameObject.SetActive(true));
         if (hit == true)
         {
-            Debug.Log(2);
-            hit = false;
             if (stage == TutorailStage.Throw)
             {
                 Invoke("ThrowTutorial",1f);
@@ -217,7 +218,7 @@ public class TutorialControler : MonoBehaviour
         panel.transform.DOScale(Vector3.zero, 1f).OnComplete(() => keys.color = Color.white);
         if (hit)
         {
-            Invoke("EndText", 2f);
+            EndText();
         }
         else if (stage == TutorailStage.mouse)
         {
@@ -268,6 +269,7 @@ public class TutorialControler : MonoBehaviour
 
         else if (stage == TutorailStage.Throw)
         {
+            Debug.Log(6);
             stage = TutorailStage.none;
             Invoke("LeaveGame", 2f);
 
