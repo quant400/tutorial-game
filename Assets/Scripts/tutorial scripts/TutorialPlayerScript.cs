@@ -219,7 +219,7 @@ public class TutorialPlayerScript : MonoBehaviour
         if (other.CompareTag("EnterGym"))
         {
             tC.EnterRing();
-            other.GetComponent<MeshCollider>().enabled = false;
+            other.GetComponent<BoxCollider>().enabled = false;
 
         }
     }
