@@ -100,6 +100,7 @@ public class webLoginView : MonoBehaviour
             t.gameObject.SetActive(false);
         }
         transform.GetChild(transform.childCount-1).gameObject.SetActive(true);
+        transform.GetChild(transform.childCount-2).gameObject.SetActive(true);
         nftGetter.Skip();
     }
 

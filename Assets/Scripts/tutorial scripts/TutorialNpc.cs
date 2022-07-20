@@ -76,11 +76,13 @@ public class TutorialNpc : MonoBehaviour
     public void InsideGym()
     {
         noLongerFollow = true;
+        animNPC.SetBool("Walk", false);
         transform.position = placeAfterEnterGym.position;
         transform.rotation = placeAfterEnterGym.rotation;
     }
     public void Fighting()
     {
+        animNPC.SetBool("Walk", false);
         transform.position = placeForCombatTutorial.position;
         transform.rotation = placeForCombatTutorial.rotation;
     }
