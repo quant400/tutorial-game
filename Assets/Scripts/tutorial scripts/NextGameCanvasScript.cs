@@ -33,13 +33,13 @@ public class NextGameCanvasScript : MonoBehaviour
         //replace links later
         if (g == games.chicken)
         {
-            SetText("Goto Chickedn Run?");
+            SetText("Go to Chickedn Run?");
             SetLink("http://play.cryptofightclub.io/chicken-run");
         }
 
         else if (g == games.bear)
         {
-            SetText("Goto Fight The Bear?");
+            SetText("Go to Fight The Bear?");
             SetLink("http://play.cryptofightclub.io/fight-the-bear");
         }
         panel.DOScale(Vector3.one, 1f).OnComplete(() => Time.timeScale = 0);
