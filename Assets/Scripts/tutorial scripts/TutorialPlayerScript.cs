@@ -26,6 +26,7 @@ public class TutorialPlayerScript : MonoBehaviour
     {
         playerAnim = GetComponent<Animator>();
         pSFXC = GetComponent<PlayerSFXController>();
+        GetComponent<StarterAssetsInputs>().SetCursorLock(true);
         Invoke("GetRefrences", 0.5f);
     }
     void GetRefrences()
