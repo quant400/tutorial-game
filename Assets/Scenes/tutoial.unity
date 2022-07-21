@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 180037786}
   - component: {fileID: 180037785}
   - component: {fileID: 180037784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2135,7 +2135,7 @@ GameObject:
   - component: {fileID: 537828356}
   - component: {fileID: 537828355}
   - component: {fileID: 537828354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4484,7 +4484,7 @@ GameObject:
   - component: {fileID: 813447627}
   - component: {fileID: 813447626}
   - component: {fileID: 813447625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5388,7 +5388,7 @@ GameObject:
   - component: {fileID: 928217374}
   - component: {fileID: 928217373}
   - component: {fileID: 928217372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7349,7 +7349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1404651591}
   - component: {fileID: 1404651590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DisableAfterMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}

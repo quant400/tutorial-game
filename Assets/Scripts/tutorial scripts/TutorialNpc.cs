@@ -122,7 +122,7 @@ public class TutorialNpc : MonoBehaviour
             }
             else
             {
-                if (animNPC.GetBool("Walk") && !following)
+                if (animNPC.GetBool("Walk"))
                 {
                     following = false;
                     animNPC.SetBool("Walk", false);

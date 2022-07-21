@@ -12,6 +12,8 @@ TagManager:
   - PunchingBag
   - ImpPlace
   - ThrowObj
+  - Animal
+  - Chicken
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - not ground
   - 
   - 
   - 
