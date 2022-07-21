@@ -16,9 +16,10 @@ public class uiView : MonoBehaviour
     [SerializeField] GameObject leaderBoeardCanvas;
     [SerializeField] GameObject startCanvas;
     [SerializeField] GameObject nextGameCanvas;
+    [SerializeField] GameObject SkipScreen;
 
 
-    public Button loginBtn, PlayMode, Play, LeaderBoard, BackToCharacterSelection, Skip, tryout, backFromLeaderboard , tryagain;
+    public Button loginBtn, PlayMode, Play, LeaderBoard, BackToCharacterSelection, Skip, tryout, backFromLeaderboard , tryagain , skipGame;
     [SerializeField] webLoginView webloginView;
     // Start is called before the first frame update
     private void Awake()
@@ -64,6 +65,20 @@ public class uiView : MonoBehaviour
           .AddTo(this);
         Skip.OnClickAsObservable()
         .Do(_ => webloginView.OnSkip())
+        .Where(_ => PlaySounds.instance != null)
+        .Do(_ => PlaySounds.instance.Play())
+        .Subscribe()
+        .AddTo(this);  
+
+        tryout.OnClickAsObservable()
+        .Do(_ => webloginView.OnTryout())
+        .Where(_ => PlaySounds.instance != null)
+        .Do(_ => PlaySounds.instance.Play())
+        .Subscribe()
+        .AddTo(this); 
+        
+        skipGame.OnClickAsObservable()
+        .Do(_ => EnableSkipScreen())
         .Where(_ => PlaySounds.instance != null)
         .Do(_ => PlaySounds.instance.Play())
         .Subscribe()
@@ -142,7 +157,10 @@ public class uiView : MonoBehaviour
         }
     }
 
-
+    void EnableSkipScreen()
+    {
+        SkipScreen.SetActive(true);
+    }
     public void ActivateNectGame(games g)
     {
         nextGameCanvas.GetComponent<NextGameCanvasScript>().EnablePanel(g);
