@@ -101,7 +101,7 @@ public class TutorialNpc : MonoBehaviour
             Debug.Log(1);
             if (other.gameObject.GetComponentInParent<TutorialPlayerScript>().GetAttacking())
             {
-                other.gameObject.GetComponentInParent<TutorialPlayerScript>().SetAttacking(false);
+                //other.gameObject.GetComponentInParent<TutorialPlayerScript>().SetAttacking(false);
                 GetHit();
             }
         }

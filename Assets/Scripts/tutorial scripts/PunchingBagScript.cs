@@ -42,7 +42,7 @@ public class PunchingBagScript : MonoBehaviour
                 Vector3 attackLoc = collision.GetContact(0).point;
                 punchDirection = transform.position - attackLoc;
                 punchIt();
-                collision.gameObject.GetComponentInParent<TutorialPlayerScript>().SetAttacking(false);
+                //collision.gameObject.GetComponentInParent<TutorialPlayerScript>().SetAttacking(false);
             }
         }
     }

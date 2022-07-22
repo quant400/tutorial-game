@@ -22,11 +22,14 @@ public class PlayerSFXController : MonoBehaviour
     private float m_StepCycle;
     private float m_NextStep;
     [SerializeField] private float m_StepInterval;
+
+    TutorialPlayerScript tps;
     void Start()
     {
         cC = GetComponent<CharacterController>();
         tPC = GetComponent<ThirdPersonController>();
         playerAudio = GetComponent<AudioSource>();
+        tps = GetComponent<TutorialPlayerScript>();
     }
 
     public void PlayPunch()
@@ -75,7 +78,7 @@ public class PlayerSFXController : MonoBehaviour
         }
 
         m_NextStep = m_StepCycle + m_StepInterval;
-
-        PlayStep();
+        if(!tps.Blocking && !tps.GetAttacking())
+            PlayStep();
     }
 }

@@ -21,7 +21,8 @@ public class TutorialPlayerScript : MonoBehaviour
     Transform throwableObject;
     Transform throwableObjectParent;
     public bool CloseToPick;
-   
+
+    public bool Blocking;
     void Start()
     {
         playerAnim = GetComponent<Animator>();
@@ -77,49 +78,58 @@ public class TutorialPlayerScript : MonoBehaviour
 
     public void Punch()
     {
-        attacking = true;
-        originalRot = transform.localRotation;
-        SetAttacking(true);
-        pSFXC.PlaySwoosh();
-        int p = Random.Range(1, 3);
-        playerAnim.SetFloat("PunchVal", p);
-        playerAnim.SetTrigger("Punch");
-        playerAnim.SetBool("Block", false);
-        if(tC.fightTutorialDone)
+        if (!attacking)
         {
-            DisableMovement();
-            Invoke("AttackDone",0.5f);
+            attacking = true;
+            originalRot = transform.localRotation;
+            SetAttacking(true);
+            pSFXC.PlaySwoosh();
+            int p = Random.Range(1, 3);
+            playerAnim.SetFloat("PunchVal", p);
+            playerAnim.SetTrigger("Punch");
+            playerAnim.SetBool("Block", false);
+            if (tC.fightTutorialDone)
+            {
+                DisableMovement();
+                Invoke("AttackDone", 0.5f);
+            }
+            else
+                Invoke("SetAttackFalse", 0.5f);
         }
-
 
     }
 
     public void Kick()
     {
-        attacking = true;
-        originalRot = transform.localRotation;
-        SetAttacking(true);
-        int p = Random.Range(1, 3);
-        pSFXC.PlaySwoosh();
-        playerAnim.SetFloat("KickVal", p);
-        playerAnim.SetTrigger("Kick");
-        if (tC.fightTutorialDone)
+        if (!attacking)
         {
-            DisableMovement();
-            Invoke("AttackDone", 1.5f);
+            attacking = true;
+            originalRot = transform.localRotation;
+            SetAttacking(true);
+            int p = Random.Range(1, 3);
+            pSFXC.PlaySwoosh();
+            playerAnim.SetFloat("KickVal", p);
+            playerAnim.SetTrigger("Kick");
+            if (tC.fightTutorialDone)
+            {
+                DisableMovement();
+                Invoke("AttackDone", 1.5f);
+            }
+            else
+                Invoke("SetAttackFalse", 1.5f);
         }
-
     }
 
     public void Block()
     {
-        
+        Blocking = true;
         playerAnim.SetBool("Block", true);
 
     }
 
     public void StopBlock()
     {
+        Blocking = false;
         playerAnim.SetBool("Block", false);
         AttackDone();
     }
@@ -230,6 +240,10 @@ public class TutorialPlayerScript : MonoBehaviour
         attacking = false;
         EnableMovement();
         playerAnim.SetBool("Fight", false);
+    }
+    void SetAttackFalse()
+    {
+        attacking = false;
     }
     public bool GetAttacking()
     {
