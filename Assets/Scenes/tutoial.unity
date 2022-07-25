@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 180037786}
   - component: {fileID: 180037785}
   - component: {fileID: 180037784}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1856,6 +1856,93 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359343139}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &395510759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 395510760}
+  - component: {fileID: 395510764}
+  - component: {fileID: 395510763}
+  - component: {fileID: 395510762}
+  - component: {fileID: 395510761}
+  m_Layer: 0
+  m_Name: Ground colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &395510760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395510759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.95, y: 0, z: -4.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1879009039}
+  m_Father: {fileID: 855134530}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &395510761
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395510759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.237211, y: 0.099999905, z: 1.7867527}
+  m_Center: {x: 4.538605, y: 1.78, z: -1.8200002}
+--- !u!65 &395510762
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395510759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.269063, y: 0.099999905, z: 1.7867527}
+  m_Center: {x: 4.5876784, y: 3.45, z: 2.0258074}
+--- !u!65 &395510763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395510759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.558489, y: 0.1500001, z: 7.468321}
+  m_Center: {x: -0.5729637, y: 3.45, z: 6.5595503}
+--- !u!65 &395510764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395510759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 13.7656555, y: 0.16, z: 22.16334}
+  m_Center: {x: -0.49232864, y: -0.3, z: 2.2978601}
 --- !u!4 &400680254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3411008643973925106, guid: 913ea7a327065da4cb1398368c898337, type: 3}
@@ -2135,7 +2222,7 @@ GameObject:
   - component: {fileID: 537828356}
   - component: {fileID: 537828355}
   - component: {fileID: 537828354}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4484,7 +4571,7 @@ GameObject:
   - component: {fileID: 813447627}
   - component: {fileID: 813447626}
   - component: {fileID: 813447625}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4993,6 +5080,7 @@ Transform:
   - {fileID: 764562103}
   - {fileID: 2003691802}
   - {fileID: 259723895}
+  - {fileID: 395510760}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5388,7 +5476,7 @@ GameObject:
   - component: {fileID: 928217374}
   - component: {fileID: 928217373}
   - component: {fileID: 928217372}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8941,6 +9029,64 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841625267}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1879009038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1879009039}
+  - component: {fileID: 1879009041}
+  - component: {fileID: 1879009040}
+  m_Layer: 0
+  m_Name: stairs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1879009039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879009038}
+  m_LocalRotation: {x: -0.26311538, y: 0, z: 0, w: 0.96476436}
+  m_LocalPosition: {x: 4.23, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 395510760}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -30.51, y: 0, z: 0}
+--- !u!65 &1879009040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879009038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0443516, y: 0.120859146, z: 3.9594352}
+  m_Center: {x: 0.36128283, y: 2.9104068, z: -3.2746987}
+--- !u!65 &1879009041
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879009038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0443516, y: 0.099999905, z: 3.1240888}
+  m_Center: {x: 0.36128283, y: 2.42, z: 1.1929697}
 --- !u!1 &1900242874
 GameObject:
   m_ObjectHideFlags: 0
@@ -14789,7 +14935,7 @@ GameObject:
   - component: {fileID: 7673570688270117500}
   - component: {fileID: 342546844942262485}
   - component: {fileID: 1084059398358051055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: slab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37909,7 +38055,7 @@ GameObject:
   - component: {fileID: 6280446940675157464}
   - component: {fileID: 699092399601122272}
   - component: {fileID: 6297838810612887839}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: structure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
