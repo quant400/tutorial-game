@@ -997,7 +997,7 @@ MonoBehaviour:
   CameraDistance: 2
   CameraCollisionFilter:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 129
   IgnoreTag: Player
   CameraRadius: 0.2
 --- !u!1 &855274955362360772
@@ -1454,7 +1454,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2622568027467027484}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -1747,6 +1747,7 @@ MonoBehaviour:
   thingPickedUp: 0
   playerHand: {fileID: 8652280927992275447}
   CloseToPick: 0
+  Blocking: 0
 --- !u!1 &2784214654638234697
 GameObject:
   m_ObjectHideFlags: 0

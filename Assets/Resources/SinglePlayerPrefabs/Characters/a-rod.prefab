@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415453427369970771}
   m_LocalRotation: {x: 0.069663554, y: 0.000000004291144, z: -2.9966435e-10, w: 0.9975706}
-  m_LocalPosition: {x: 0, y: -0.60000014, z: 1.3000011}
+  m_LocalPosition: {x: 0, y: -0.60000014, z: 1.3000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6903727945446556585}
@@ -318,7 +318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032214769544044072}
   m_LocalRotation: {x: 0.069663554, y: 0.000000004291144, z: -2.9966435e-10, w: 0.9975706}
-  m_LocalPosition: {x: 0, y: -0.60000014, z: 1.3000011}
+  m_LocalPosition: {x: 0, y: -0.60000014, z: 1.3000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4557021110266530000}
@@ -842,6 +842,7 @@ MonoBehaviour:
   thingPickedUp: 0
   playerHand: {fileID: 4706400087066797517}
   CloseToPick: 0
+  Blocking: 0
 --- !u!114 &7823914468320698110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1554,7 +1555,7 @@ MonoBehaviour:
   CameraDistance: 2
   CameraCollisionFilter:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 129
   IgnoreTag: Player
   CameraRadius: 0.2
 --- !u!1 &4321192127396265367
@@ -1917,7 +1918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6514262051314091359}
   m_LocalRotation: {x: 0.069663554, y: -0.000000004291144, z: 2.9966435e-10, w: 0.9975706}
-  m_LocalPosition: {x: 0, y: -0.60000014, z: 1.3000011}
+  m_LocalPosition: {x: 0, y: -0.60000014, z: 1.3000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7070443845633742959}

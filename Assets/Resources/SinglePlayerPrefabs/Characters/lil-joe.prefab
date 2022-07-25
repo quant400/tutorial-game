@@ -1115,7 +1115,7 @@ MonoBehaviour:
   CameraDistance: 2
   CameraCollisionFilter:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 129
   IgnoreTag: Player
   CameraRadius: 0.2
 --- !u!1 &3370302352308250231
@@ -2289,6 +2289,7 @@ MonoBehaviour:
   thingPickedUp: 0
   playerHand: {fileID: 3373628294791223178}
   CloseToPick: 0
+  Blocking: 0
 --- !u!1 &8729246851354853790
 GameObject:
   m_ObjectHideFlags: 0
