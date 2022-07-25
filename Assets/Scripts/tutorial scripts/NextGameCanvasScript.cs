@@ -33,7 +33,7 @@ public class NextGameCanvasScript : MonoBehaviour
         //replace links later
         if (g == games.chicken)
         {
-            SetText("Go to Chickedn Run?");
+            SetText("Go to Chicken Run?");
             SetLink("http://play.cryptofightclub.io/chicken-run");
         }
 
