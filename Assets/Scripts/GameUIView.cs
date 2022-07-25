@@ -149,6 +149,7 @@ public class GameUIView : MonoBehaviour
 
     void OpenSettings()
     {
+        gameplayView.instance.isPaused = true;
         SettingsPanel.SetActive(true);
         Time.timeScale = 0;
     }
@@ -156,6 +157,7 @@ public class GameUIView : MonoBehaviour
 
     void CloseSettings()
     {
+        gameplayView.instance.isPaused = false;
         SettingsPanel.SetActive(false);
         Time.timeScale = 1;
     }

@@ -29,6 +29,7 @@ public class NextGameCanvasScript : MonoBehaviour
     }
     public void EnablePanel(games g)
     {
+        gameplayView.instance.isPaused = true;
         var player = GameObject.FindGameObjectWithTag("Player");
         //replace links later
         if (g == games.chicken)
@@ -47,6 +48,7 @@ public class NextGameCanvasScript : MonoBehaviour
     }
     public void DisablePanel()
     {
+        gameplayView.instance.isPaused = false;
         Time.timeScale = 1;
         var player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<TutorialPlayerScript>().EnableMovement();
