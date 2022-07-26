@@ -125,9 +125,8 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-			if (!cursorUnlocked && Keyboard.current[Key.Enter].wasPressedThisFrame)
+			if (!cursorUnlocked && Keyboard.current[Key.Escape].wasPressedThisFrame)
 			{
-				Debug.Log("Unlocked");
 				cursorUnlocked = true;
 				GetComponent<StarterAssetsInputs>().SetCursorLock(false);
 			}
@@ -343,7 +342,6 @@ namespace StarterAssets
 			yield return new WaitForSecondsRealtime(x);
 			if (!gameplayView.instance.isPaused)
 			{
-				Debug.Log("Locked");
 				cursorUnlocked = false;
 				GetComponent<StarterAssetsInputs>().SetCursorLock(true);
 			}
