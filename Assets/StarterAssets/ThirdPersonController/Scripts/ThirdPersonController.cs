@@ -125,7 +125,7 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-			if (!cursorUnlocked && Keyboard.current[Key.Escape].wasPressedThisFrame)
+			if (!cursorUnlocked && Keyboard.current[Key.Enter].wasPressedThisFrame)
 			{
 				cursorUnlocked = true;
 				GetComponent<StarterAssetsInputs>().SetCursorLock(false);
