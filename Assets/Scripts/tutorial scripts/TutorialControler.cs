@@ -21,7 +21,7 @@ public enum TutorailStage
 public class TutorialControler : MonoBehaviour
 {
     [SerializeField]
-    Sprite mouse, arrow, space, shift, attack, swap, block, pickUp;
+    Sprite mouse, arrow, space, shift, attack, swap, block, pickUp ,taskCompleted;
     [SerializeField]
     TMP_Text instructions;
     [SerializeField]
@@ -276,14 +276,19 @@ public class TutorialControler : MonoBehaviour
         }
         
     }
-
+    void MardDone()
+    {
+        instructions.text = "Well Done!".ToUpper();
+        keys.sprite = taskCompleted;
+        //keys.color = Color.green;
+    }
     void CheckTaskDone()
     {
         if (stage == TutorailStage.mouse)
         {
             if (Mathf.Abs(Input.GetAxis("Mouse X")) > 0 || Mathf.Abs(Input.GetAxis("Mouse Y")) > 0)
             {
-                keys.color = Color.green;
+                MardDone();
                 taskDone = true;
                 Invoke("TurnOffTutorial", 3f);
 
@@ -293,7 +298,7 @@ public class TutorialControler : MonoBehaviour
         {
             if(Mathf.Abs( Input.GetAxis("Horizontal")) > 0 ||Mathf.Abs( Input.GetAxis("Vertical")) >0)
             {
-                keys.color = Color.green;
+                MardDone();
                 taskDone = true;
                 Invoke("TurnOffTutorial", 3f);
 
@@ -303,7 +308,7 @@ public class TutorialControler : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                keys.color = Color.green;
+                MardDone();
                 taskDone = true;
                 Invoke("TurnOffTutorial", 3f);
             }
@@ -312,7 +317,7 @@ public class TutorialControler : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
             {
-                keys.color = Color.green;
+                MardDone();
                 taskDone = true;
                 Invoke("TurnOffTutorial", 3f);
             }
@@ -322,7 +327,7 @@ public class TutorialControler : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                keys.color = Color.green;
+                MardDone();
                 taskDone = true;
                 Invoke("TurnOffTutorial", 3f);
             }
@@ -332,7 +337,7 @@ public class TutorialControler : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                keys.color = Color.green;
+                MardDone();
                 taskDone = true;
                 Invoke("TurnOffTutorial", 3f);
             }
@@ -342,7 +347,7 @@ public class TutorialControler : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1))
             {
-                keys.color = Color.green;
+                MardDone();
                 taskDone = true;
                 Invoke("TurnOffTutorial", 3f);
             }
@@ -352,7 +357,7 @@ public class TutorialControler : MonoBehaviour
         {
             if (ObjectPickedUp)
             {
-                keys.color = Color.green;
+                MardDone();
                 taskDone = true;
                 Invoke("TurnOffTutorial", 3f);
             }

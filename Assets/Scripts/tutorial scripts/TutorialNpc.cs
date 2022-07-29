@@ -57,7 +57,7 @@ public class TutorialNpc : MonoBehaviour
         if (!GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))
         {
             Vector3 pos = new Vector3(player.transform.position.x, 0, player.transform.position.z) + new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z)*5;
-            transform.DOMove(pos, 2f).OnComplete(() =>
+            transform.DOMove(pos, 1.5f).OnComplete(() =>
             {
                 tps.EnableMovement();
                 transform.LookAt(player);
