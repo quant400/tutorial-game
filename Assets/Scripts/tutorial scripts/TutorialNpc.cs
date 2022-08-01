@@ -75,10 +75,20 @@ public class TutorialNpc : MonoBehaviour
     }
     public void InsideGym()
     {
+        movingToFront = true;
         noLongerFollow = true;
-        animNPC.SetBool("Walk", false);
-        transform.position = placeAfterEnterGym.position;
-        transform.rotation = placeAfterEnterGym.rotation;
+        animNPC.SetBool("Walk", true);
+        tps.Invoke("EnableMovement", 2f);
+        transform.LookAt(placeAfterEnterGym.transform);
+        transform.DOMove(placeAfterEnterGym.position, 4f).OnComplete(()=>
+        {
+            movingToFront = false;
+            animNPC.SetBool("Walk", false);
+            transform.position = placeAfterEnterGym.position;
+            transform.rotation = placeAfterEnterGym.rotation;
+        }).SetEase(ease:Ease.Linear);
+
+
     }
     public void Fighting()
     {

@@ -50,7 +50,7 @@ public class TutorialControler : MonoBehaviour
         stage = TutorailStage.none;
         Invoke("MouseTutorial", 1f);
         tNCP = GetComponentInParent<TutorialNpc>();
-        toOtherGames.SetActive(false);
+        //toOtherGames.SetActive(false);
         Invoke("GetRefrences",0.5f);
     }
     void GetRefrences()
@@ -142,7 +142,7 @@ public class TutorialControler : MonoBehaviour
 
     void EnterGym()
     {
-        
+        player.DisableMovement();
         instructions.text = ("Now head into the gym").ToUpper();
         keys.gameObject.SetActive(false);
         panel.transform.DOScale(Vector3.one, 1f);
