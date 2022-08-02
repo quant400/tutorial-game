@@ -2275,7 +2275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
+  m_sendNavigationEvents: 0
   m_DragThreshold: 10
 --- !u!114 &939709991
 MonoBehaviour:
@@ -10385,6 +10385,7 @@ MonoBehaviour:
     name: 
   gameOverObject: {fileID: 0}
   isTryout: 0
+  isPaused: 0
 --- !u!114 &5563223587690245332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10464,6 +10465,7 @@ MonoBehaviour:
     name: 
   gameOverObject: {fileID: 0}
   isTryout: 0
+  isPaused: 0
 --- !u!114 &107283166
 MonoBehaviour:
   m_ObjectHideFlags: 0
