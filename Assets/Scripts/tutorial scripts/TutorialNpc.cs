@@ -108,7 +108,6 @@ public class TutorialNpc : MonoBehaviour
        
         if (other.gameObject.CompareTag("Punch") || other.gameObject.CompareTag("Kick"))
         {
-            Debug.Log(1);
             if (other.gameObject.GetComponentInParent<TutorialPlayerScript>().GetAttacking())
             {
                 //other.gameObject.GetComponentInParent<TutorialPlayerScript>().SetAttacking(false);

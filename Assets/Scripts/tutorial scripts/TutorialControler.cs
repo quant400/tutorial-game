@@ -48,7 +48,12 @@ public class TutorialControler : MonoBehaviour
     private void Start()
     {
         stage = TutorailStage.none;
-        Invoke("MouseTutorial", 1f);
+        taskDone = true;
+        //Invoke("MouseTutorial", 1f);
+        instructions.text = ("Welcome to Crypto Fight Club").ToUpper();
+        keys.gameObject.SetActive(false);
+        Invoke("MouseTutorial", 5f);
+        panel.transform.DOScale(Vector3.one, 1f);
         tNCP = GetComponentInParent<TutorialNpc>();
         //toOtherGames.SetActive(false);
         Invoke("GetRefrences",0.5f);
@@ -56,14 +61,13 @@ public class TutorialControler : MonoBehaviour
     void GetRefrences()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<TutorialPlayerScript>();
-        player.GetComponent<ThirdPersonController>().enabled = false;
         camToFace = player.transform.GetChild(0);
     }
     #region TutorialStarters
 
     void MouseTutorial()
     {
-        player.GetComponent<ThirdPersonController>().enabled = true;
+        keys.gameObject.SetActive(true);
         stage = TutorailStage.mouse;
         taskDone = false;
         instructions.text = ("Use the  mouse to look around").ToUpper();
@@ -133,7 +137,7 @@ public class TutorialControler : MonoBehaviour
     {
         stage = TutorailStage.Throw;
         taskDone = false;
-        instructions.text = ("Some objects can be picked up  with the \"E\"key and thrown with the attack button").ToUpper();
+        instructions.text = ("look behind you, pick up with \"E\" and throw with left click").ToUpper();
         keys.sprite = pickUp;
         throwableObjects.gameObject.SetActive(true) ;
         panel.transform.DOScale(Vector3.one, 1f).OnComplete(() => hit = false); ;
@@ -290,9 +294,9 @@ public class TutorialControler : MonoBehaviour
         {
             if (Mathf.Abs(Input.GetAxis("Mouse X")) > 0 || Mathf.Abs(Input.GetAxis("Mouse Y")) > 0)
             {
-                MarkDone();
+                Invoke("MarkDone",2f);
                 taskDone = true;
-                Invoke("TurnOffTutorial", 3f);
+                Invoke("TurnOffTutorial", 5f);
 
             }
         }
