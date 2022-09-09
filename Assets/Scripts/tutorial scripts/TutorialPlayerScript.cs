@@ -175,9 +175,9 @@ public class TutorialPlayerScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetButtonDown("Fire4"))
             punch = !punch;
-        if (Input.GetMouseButtonDown(0) && fightingTutorialStarted && !thingPickedUp)
+        if (Input.GetButtonDown("Fire1") && fightingTutorialStarted && !thingPickedUp)
         {
             if (tC.fightTutorialDone)
             {
@@ -193,7 +193,7 @@ public class TutorialPlayerScript : MonoBehaviour
             else
                 Kick();
         }
-        if (Input.GetMouseButtonDown(1) && fightingTutorialStarted && !thingPickedUp)
+        if (Input.GetButtonDown("Fire2") && fightingTutorialStarted && !thingPickedUp)
         {
             if (tC.fightTutorialDone)
             {
@@ -203,16 +203,16 @@ public class TutorialPlayerScript : MonoBehaviour
             }
             Block();
         }
-        if (Input.GetMouseButtonUp(1) && !thingPickedUp)
+        if (Input.GetButtonUp("Fire2") && !thingPickedUp)
         {
             StopBlock();
         }
 
-        if(Input.GetKeyDown(KeyCode.E) && CloseToPick && !thingPickedUp)
+        if(Input.GetButtonDown("Fire3") && CloseToPick && !thingPickedUp)
         {
             PickUpThing();
         }
-        if (Input.GetMouseButtonDown(0) && thingPickedUp)
+        if (Input.GetButtonDown("Fire1") && thingPickedUp)
         {
             ThrowThing();
         }
