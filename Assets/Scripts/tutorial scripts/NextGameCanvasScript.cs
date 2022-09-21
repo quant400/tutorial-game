@@ -9,7 +9,8 @@ using UniRx;
 public enum games
 {
     chicken,
-    bear
+    bear,
+    warrior
 }
 public class NextGameCanvasScript : MonoBehaviour
 {
@@ -42,6 +43,11 @@ public class NextGameCanvasScript : MonoBehaviour
         {
             SetText("Go to Fight The Bear?");
             SetLink("http://play.cryptofightclub.io/fight-the-bear");
+        }
+        else if (g == games.warrior)
+        {
+            SetText("Go to Fight The Bear?");
+            SetLink("http://staging-play.cryptofightclub.io/fight-the-bear");
         }
         panel.DOScale(Vector3.one, 1f).OnComplete(() => Time.timeScale = 0);
         player.GetComponent<StarterAssets.StarterAssetsInputs>().SetCursorLock(false);
