@@ -42,6 +42,8 @@ public class TutorialPlayerScript : MonoBehaviour
         var x=GameObject.FindGameObjectWithTag("PunchingBag");
         tC.StartFightTutorial();
         transform.LookAt(new Vector3(x.transform.position.x,transform.position.y,x.transform.position.z));
+        if (gameplayView.instance.chosenNFT.name == "grane")
+            transform.position = transform.position + transform.forward * 0.35f;
         playerAnim.SetBool("Fight", true);
         
     }
