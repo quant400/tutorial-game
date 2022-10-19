@@ -231,7 +231,7 @@ public class characterSelectionView : MonoBehaviour
         }
         else
         {
-            gameplayView.instance.chosenNFT = new NFTInfo { name = "a-rod", id = 175 };
+            gameplayView.instance.chosenNFT = new NFTInfo { name = "grane", id = 175 };
             selected = true;
             tutorialGameModel.gameCurrentStep.Value = tutorialGameModel.GameSteps.OnCharacterSelected;
         }

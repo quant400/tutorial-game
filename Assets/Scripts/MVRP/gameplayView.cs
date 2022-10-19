@@ -30,6 +30,8 @@ public class gameplayView : MonoBehaviour
     public bool isTryout = false;
 
     public bool isPaused=false;
+    public bool hasOtherChainNft=false;
+
     private void Awake()
     {
         if (instance != null && instance != this)
