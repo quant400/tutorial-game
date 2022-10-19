@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SkipScreenScreenView : MonoBehaviour
 {
-    [SerializeField] Button back, chicken, bear;
+    [SerializeField] Button back, chicken, bear,warrior;
 
     string url;
 
@@ -35,6 +35,12 @@ public class SkipScreenScreenView : MonoBehaviour
             .Do(_ => PlaySounds.instance.Play())
             .Subscribe()
             .AddTo(this);
+        warrior.OnClickAsObservable()
+            .Do(_ => LoadWarrior())
+            .Where(_ => PlaySounds.instance != null)
+            .Do(_ => PlaySounds.instance.Play())
+            .Subscribe()
+            .AddTo(this);
     }
 
 
@@ -53,7 +59,11 @@ public class SkipScreenScreenView : MonoBehaviour
         url = "http://play.cryptofightclub.io/fight-the-bear";
         LoadGame();
     }
-
+    void LoadWarrior()
+    {
+        url = "http://staging-play.cryptofightclub.io/warrior";
+        LoadGame();
+    }
     void LoadGame()
     {
         Application.ExternalEval("window.open('" + url + "','_self')");

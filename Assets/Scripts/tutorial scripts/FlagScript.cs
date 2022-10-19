@@ -10,7 +10,18 @@ public class FlagScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<TutorialPlayerScript>().DisableMovement();
+            other.GetComponent<CharacterController>().enabled = true;
+            other.GetComponent<StarterAssets.ThirdPersonController>().enabled = true;
             gameplayView.instance.GetComponent<uiView>().ActivateNectGame(games.warrior);
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            Invoke("EnableFlag", 3f);
         }
+    }
+
+
+
+    void EnableFlag()
+    {
+        gameObject.GetComponent<CapsuleCollider>().enabled = true;
     }
 }

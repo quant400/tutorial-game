@@ -46,8 +46,8 @@ public class NextGameCanvasScript : MonoBehaviour
         }
         else if (g == games.warrior)
         {
-            SetText("Go to Fight The Bear?");
-            SetLink("http://staging-play.cryptofightclub.io/fight-the-bear");
+            SetText("Go to Warrior?");
+            SetLink("http://staging-play.cryptofightclub.io/warrior");
         }
         panel.DOScale(Vector3.one, 1f).OnComplete(() => Time.timeScale = 0);
         player.GetComponent<StarterAssets.StarterAssetsInputs>().SetCursorLock(false);
