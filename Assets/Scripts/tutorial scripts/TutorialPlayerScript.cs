@@ -42,8 +42,7 @@ public class TutorialPlayerScript : MonoBehaviour
         var x=GameObject.FindGameObjectWithTag("PunchingBag");
         tC.StartFightTutorial();
         transform.LookAt(new Vector3(x.transform.position.x,transform.position.y,x.transform.position.z));
-        if (gameplayView.instance.chosenNFT.name == "grane")
-            transform.position = transform.position + transform.forward * 0.35f;
+        transform.position = transform.position + transform.forward * 0.35f;
         playerAnim.SetBool("Fight", true);
         
     }
@@ -154,7 +153,7 @@ public class TutorialPlayerScript : MonoBehaviour
             throwableObject.GetComponent<BoxCollider>().enabled = false;
             throwableObject.GetComponent<Rigidbody>().isKinematic = true;
             throwableObject.parent = playerHand;
-            throwableObject.localPosition = new Vector3(-0.1f, 0.025f, -0.12f);
+            throwableObject.localPosition = new Vector3(1.4f, -1f, 0.18f);
             throwableObject.GetComponent<PickableObject>().SetPickUpKey(false);
             playerAnim.SetBool("PickUp", true);
             throwableObject.GetComponent<PickableObject>().EnableThrowKey();

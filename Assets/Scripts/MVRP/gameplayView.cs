@@ -16,7 +16,8 @@ public class gameplayView : MonoBehaviour
 
     [SerializeField]
     GameObject player;
-
+    [SerializeField]
+    GameObject playerPrefab;
 
     public NFTInfo chosenNFT;
 
@@ -54,11 +55,9 @@ public class gameplayView : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        string n = gameplayView.instance.chosenNFT.name;
-        Debug.Log(chosenNFT.name);
-        GameObject resource = Resources.Load(Path.Combine("SinglePlayerPrefabs/Characters", NameToSlugConvert(n))) as GameObject;
-        player = Instantiate(resource, new Vector3(7.7f, 0, 30), Quaternion.identity);
-        Debug.Log(chosenNFT.id);
+        string n = NameToSlugConvert(gameplayView.instance.chosenNFT.name);
+        player = Instantiate(playerPrefab, new Vector3(7.7f, 0, 30), Quaternion.identity);
+        player.GetComponent<SetUpSkin>().SetUpChar(n);
     }
     public void StartGame()
     {

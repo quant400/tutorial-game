@@ -134,10 +134,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1937781389, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 524060415998921461, guid: 2228f61a3b239b94989ac3c283afb0b4, type: 3}
     - target: {fileID: 1618269360079162045, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3791616216787861488, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 524060415998921461, guid: 2228f61a3b239b94989ac3c283afb0b4, type: 3}
     - target: {fileID: 8126445882098143849, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
       propertyPath: m_Name
       value: Presenter
