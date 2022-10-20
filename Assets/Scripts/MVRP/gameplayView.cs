@@ -55,7 +55,7 @@ public class gameplayView : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        string n = NameToSlugConvert(gameplayView.instance.chosenNFT.name);
+        string n = NameToSlugConvert(chosenNFT.name);
         player = Instantiate(playerPrefab, new Vector3(7.7f, 0, 30), Quaternion.identity);
         player.GetComponent<SetUpSkin>().SetUpChar(n);
     }
