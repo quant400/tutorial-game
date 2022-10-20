@@ -130,9 +130,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 255641003, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 384770454, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155434584, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1937781389, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
       propertyPath: playerPrefab
@@ -146,6 +154,10 @@ PrefabInstance:
       propertyPath: playerPrefab
       value: 
       objectReference: {fileID: 524060415998921461, guid: 2228f61a3b239b94989ac3c283afb0b4, type: 3}
+    - target: {fileID: 8126445881918332686, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8126445882098143849, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
       propertyPath: m_Name
       value: Presenter
