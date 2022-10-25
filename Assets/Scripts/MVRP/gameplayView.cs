@@ -55,6 +55,9 @@ public class gameplayView : MonoBehaviour
 
     public void SpawnPlayer()
     {
+        // changed for holloween
+        chosenNFT.name = "pumpkin";
+        //end
         string n = NameToSlugConvert(chosenNFT.name);
         player = Instantiate(playerPrefab, new Vector3(7.7f, 0, 30), Quaternion.identity);
         player.GetComponent<SetUpSkin>().SetUpChar(n);
