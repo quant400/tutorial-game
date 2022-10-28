@@ -943,7 +943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &255641004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3377,7 +3377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1155434585
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6789,7 +6789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4259768819092561331
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10637,12 +10637,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerPrefab: {fileID: 524060415998921461, guid: 2228f61a3b239b94989ac3c283afb0b4, type: 3}
   chosenNFT:
     id: 0
     name: 
   gameOverObject: {fileID: 0}
   isTryout: 0
   isPaused: 0
+  hasOtherChainNft: 0
 --- !u!114 &5563223587690245332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10717,12 +10719,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerPrefab: {fileID: 524060415998921461, guid: 2228f61a3b239b94989ac3c283afb0b4, type: 3}
   chosenNFT:
     id: 0
     name: 
   gameOverObject: {fileID: 0}
   isTryout: 0
   isPaused: 0
+  hasOtherChainNft: 0
 --- !u!114 &107283166
 MonoBehaviour:
   m_ObjectHideFlags: 0
