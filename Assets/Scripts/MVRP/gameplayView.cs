@@ -55,8 +55,8 @@ public class gameplayView : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        // changed for holloween
-        chosenNFT.name = "pumpkin";
+        // changed for special events that need character replacement 
+        //chosenNFT.name = "pumpkin";
         //end
         string n = NameToSlugConvert(chosenNFT.name);
         player = Instantiate(playerPrefab, new Vector3(7.7f, 0, 30), Quaternion.identity);
