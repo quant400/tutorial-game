@@ -60,7 +60,13 @@ public class NFTGetView : MonoBehaviour
                 case UnityWebRequest.Result.Success:
                     //Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
                     temp = webRequest;
-                    Display();
+                    string data = "{\"Items\":" + temp.downloadHandler.text + "}";
+                    tutorialGameModel.currentNFTString = data;
+
+
+
+                    NFTInfo[] NFTData = JsonHelper.FromJson<NFTInfo>(data);
+                    Display(NFTData);
                     break;
             }
         }
@@ -100,16 +106,8 @@ public class NFTGetView : MonoBehaviour
 
 
 
-    void Display()
+    public void Display(NFTInfo[] NFTData)
     {
-        string data = "{\"Items\":" + temp.downloadHandler.text + "}";
-        tutorialGameModel.currentNFTString = data;
-
-
-
-        NFTInfo[] NFTData = JsonHelper.FromJson<NFTInfo>(data);
-
-
         NFTInfo[] used;
         if (gameplayView.instance.hasOtherChainNft)
         {
@@ -133,8 +131,11 @@ public class NFTGetView : MonoBehaviour
         }
         if (used.Length == 0)
         {
-            noNFTCanvas.SetActive(true);
-            tutorialGameModel.userIsLogged.Value = false;
+            /*noNFTCanvas.SetActive(true);
+            tutorialGameModel.userIsLogged.Value = false;*/
+            gameplayView.instance.usingFreemint = true;
+            characterSelectView.FreeMint();
+            tutorialGameModel.userIsLogged.Value = true;
         }
         else
         {

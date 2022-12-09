@@ -32,6 +32,7 @@ public class gameplayView : MonoBehaviour
 
     public bool isPaused=false;
     public bool hasOtherChainNft=false;
+    public bool usingFreemint = false;
 
     private void Awake()
     {
