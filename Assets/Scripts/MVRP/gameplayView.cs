@@ -8,6 +8,8 @@ using UniRx.Triggers;
 using UniRx;
 using UniRx.Operators;
 using System.IO;
+using UnityEngine.Networking;
+using System.Text;
 
 public class gameplayView : MonoBehaviour
 {
@@ -33,7 +35,11 @@ public class gameplayView : MonoBehaviour
     public bool isPaused=false;
     public bool hasOtherChainNft=false;
     public bool usingFreemint = false;
-
+    public bool usingMeta=false;
+    public (string, string) logedPlayer;
+    string juiceBal = "0";
+    string coinBal = "0";
+    GameObject juiceText, CoinText;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -100,6 +106,80 @@ public class gameplayView : MonoBehaviour
         slug = name.ToLower().Replace(".", "").Replace("'", "").Replace(" ", "-");
         return slug;
 
+    }
+
+    public string GetLoggedPlayerString()
+    {
+        if (usingMeta)
+            return PlayerPrefs.GetString("Account");
+        else
+            return logedPlayer.Item1 + "$$$" + logedPlayer.Item2;
+    }
+
+    public void SetJuiceBal(string val)
+    {
+        juiceBal = val;
+    }
+    public void SetCoinBal(string val)
+    {
+        coinBal = val;
+    }
+    public void UpdateJuiceBalance()
+    {
+        if (juiceBal == "")
+            juiceText.GetComponent<TMPro.TMP_Text>().text = "0";
+        else
+            juiceText.GetComponent<TMPro.TMP_Text>().text = juiceBal;
+    }
+
+    public void UpdateCoinBalance()
+    {
+        if (coinBal == "")
+            CoinText.GetComponent<TMPro.TMP_Text>().text = "0";
+        else
+            CoinText.GetComponent<TMPro.TMP_Text>().text = coinBal;
+    }
+
+
+
+
+    public void getJuiceFromRestApi(string assetId)
+    {
+        StartCoroutine(getJuiceRestApi(assetId));
+    }
+    struct reply
+    {
+        public string id;
+        public string balance;
+    };
+    IEnumerator getJuiceRestApi(string assetId)
+    {
+        string url = "";
+        if (KeyMaker.instance.buildType == BuildType.staging)
+            url = "https://staging-api.cryptofightclub.io/game/sdk/juice/balance/";
+        else if (KeyMaker.instance.buildType == BuildType.production)
+            url = "https://api.cryptofightclub.io/game/sdk/juice/balance/";
+        using (UnityWebRequest request = UnityWebRequest.Get(url + assetId))
+        {
+            request.SetRequestHeader("Accept", "application/json");
+            request.SetRequestHeader("Content-Type", "application/json");
+            yield return request.SendWebRequest();
+            if (request.error == null)
+            {
+                string result = Encoding.UTF8.GetString(request.downloadHandler.data);
+                reply r = JsonUtility.FromJson<reply>(request.downloadHandler.text);
+                if (KeyMaker.instance.buildType == BuildType.staging)
+                    Debug.Log(request.downloadHandler.text);
+                gameplayView.instance.SetJuiceBal(r.balance);
+
+            }
+            else
+            {
+                Debug.Log("error in server");
+            }
+
+
+        }
     }
 }
 
