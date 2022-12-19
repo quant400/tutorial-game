@@ -61,7 +61,7 @@ public class SkipScreenScreenView : MonoBehaviour
     }
     void LoadWarrior()
     {
-        url = "http://staging-play.cryptofightclub.io/warrior";
+        url = "http://play.cryptofightclub.io/warrior";
         LoadGame();
     }
     void LoadGame()
