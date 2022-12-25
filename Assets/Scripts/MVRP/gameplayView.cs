@@ -27,7 +27,7 @@ public class gameplayView : MonoBehaviour
     public static NFTInfo[] nftDataArray;
     public static bool playerLogged;
     public GameObject gameOverObject;
-
+    public JuiceDisplayScript juiceDisplay;
     bool sfxMuted = false;
 
     public bool isTryout = false;
@@ -37,9 +37,7 @@ public class gameplayView : MonoBehaviour
     public bool usingFreemint = false;
     public bool usingMeta=false;
     public (string, string) logedPlayer;
-    string juiceBal = "0";
-    string coinBal = "0";
-    GameObject juiceText, CoinText;
+    
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -113,31 +111,6 @@ public class gameplayView : MonoBehaviour
             return logedPlayer.Item1 + "$$$" + logedPlayer.Item2;
     }
 
-    public void SetJuiceBal(string val)
-    {
-        juiceBal = val;
-    }
-    public void SetCoinBal(string val)
-    {
-        coinBal = val;
-    }
-    public void UpdateJuiceBalance()
-    {
-        if (juiceBal == "")
-            juiceText.GetComponent<TMPro.TMP_Text>().text = "0";
-        else
-            juiceText.GetComponent<TMPro.TMP_Text>().text = juiceBal;
-    }
-
-    public void UpdateCoinBalance()
-    {
-        if (coinBal == "")
-            CoinText.GetComponent<TMPro.TMP_Text>().text = "0";
-        else
-            CoinText.GetComponent<TMPro.TMP_Text>().text = coinBal;
-    }
-
-
 
 
     public void getJuiceFromRestApi(string assetId)
@@ -167,7 +140,7 @@ public class gameplayView : MonoBehaviour
                 reply r = JsonUtility.FromJson<reply>(request.downloadHandler.text);
                 if (KeyMaker.instance.buildType == BuildType.staging)
                     Debug.Log(request.downloadHandler.text);
-                gameplayView.instance.SetJuiceBal(r.balance);
+                gameplayView.instance.juiceDisplay.SetJuiceBal(r.balance);
 
             }
             else
