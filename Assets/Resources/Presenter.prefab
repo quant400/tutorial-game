@@ -1228,7 +1228,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 327.47818, y: 0}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &335621204
@@ -2417,14 +2417,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 0
-    m_Right: 30
+    m_Right: 10
     m_Top: 10
     m_Bottom: 0
   m_ChildAlignment: 2
-  m_Spacing: -50
-  m_ChildForceExpandWidth: 1
+  m_Spacing: -60
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -2544,7 +2544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   juiceText: {fileID: 335621201}
   CoinText: {fileID: 762697150}
-  display: {fileID: 335621201}
+  display: {fileID: 679177204}
 --- !u!1 &762697150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,7 +2581,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 327.47818, y: 0}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &762697153
@@ -4523,7 +4523,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -30.6, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1228782228
 CanvasRenderer:
@@ -6312,7 +6312,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -30.6, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1579629922
 CanvasRenderer:
@@ -21322,7 +21322,6 @@ GameObject:
   - component: {fileID: 5563223587690245332}
   - component: {fileID: 6924860310091710693}
   - component: {fileID: 6897592449384792998}
-  - component: {fileID: 1937781389}
   - component: {fileID: 107283166}
   m_Layer: 0
   m_Name: Presenter
@@ -21421,7 +21420,7 @@ MonoBehaviour:
     id: 0
     name: 
   gameOverObject: {fileID: 0}
-  juiceDisplay: {fileID: 0}
+  juiceDisplay: {fileID: 717013190}
   isTryout: 0
   isPaused: 0
   hasOtherChainNft: 0
@@ -21488,30 +21487,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSelectView: {fileID: 6924860310091710693}
   noNFTCanvas: {fileID: 8126445881929566556}
---- !u!114 &1937781389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8126445882098143849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 207bb35de6b049f49a90fdfdfd789c79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerPrefab: {fileID: 524060415998921461, guid: 2228f61a3b239b94989ac3c283afb0b4, type: 3}
-  chosenNFT:
-    id: 0
-    name: 
-  gameOverObject: {fileID: 0}
-  juiceDisplay: {fileID: 0}
-  isTryout: 0
-  isPaused: 0
-  hasOtherChainNft: 0
-  usingFreemint: 0
-  usingMeta: 0
 --- !u!114 &107283166
 MonoBehaviour:
   m_ObjectHideFlags: 0

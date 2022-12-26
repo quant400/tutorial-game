@@ -205,7 +205,7 @@ public class characterSelectionView : MonoBehaviour
     {
         currentCharacter = currentStartIndex+selected;
         gameplayView.instance.chosenNFT = characterNFTMap[currentCharacter];
-        
+        gameplayView.instance.getJuiceFromRestApi(gameplayView.instance.chosenNFT.id);
     }
 
 
