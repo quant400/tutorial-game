@@ -158,7 +158,7 @@ public class FireBaseWebGLAuth : MonoBehaviour
     {
         FirebaseAuth.SignOut();
         GetComponentInParent<uiView>().goToMenu("login");
-        loginButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
+        loginButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
         tutorialGameModel.userIsLogged.Value = false;
         tutorialGameModel.currentNFTArray = null;
         gameplayView.instance.usingFreemint = false;
