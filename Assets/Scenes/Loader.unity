@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a2abb2275190447a24d0e27ffb7dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildType: 0
+  buildType: 1
   game: tutorial
 --- !u!4 &92286877
 Transform:
@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 335621202, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 327.47818
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 335621202, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -209,10 +209,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 762697151, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 327.47818
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 762697151, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618269360079162045, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8126445882098143849, guid: 0a974a8ad789e9c43a3d08fe44cd8f2f, type: 3}

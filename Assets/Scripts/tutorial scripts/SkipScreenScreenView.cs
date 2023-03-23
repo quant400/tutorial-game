@@ -51,17 +51,17 @@ public class SkipScreenScreenView : MonoBehaviour
 
     void LoadChicken()
     {
-        url = "http://play.cryptofightclub.io/chicken-run";
+        url = "https://play.cryptofightclub.io/chicken-run";
         LoadGame();
     }
     void LoadBear()
     {
-        url = "http://play.cryptofightclub.io/fight-the-bear";
+        url = "https://play.cryptofightclub.io/fight-the-bear";
         LoadGame();
     }
     void LoadWarrior()
     {
-        url = "http://play.cryptofightclub.io/warrior";
+        url = "https://play.cryptofightclub.io/warrior";
         LoadGame();
     }
     void LoadGame()
