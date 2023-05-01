@@ -19,7 +19,7 @@ public class uiView : MonoBehaviour
     [SerializeField] GameObject SkipScreen;
 
 
-    public Button loginBtn, PlayMode, Play, LeaderBoard, BackToCharacterSelection, Skip, tryout, backFromLeaderboard , tryagain , skipGame;
+    public Button loginBtn, PlayMode, Play, LeaderBoard, BackToCharacterSelection, Skip, tryout, backFromLeaderboard , tryagain , skipGame, skipGame2;
     [SerializeField] webLoginView webloginView;
     // Start is called before the first frame update
     private void Awake()
@@ -78,6 +78,13 @@ public class uiView : MonoBehaviour
         .AddTo(this); 
         
         skipGame.OnClickAsObservable()
+        .Do(_ => EnableSkipScreen())
+        .Where(_ => PlaySounds.instance != null)
+        .Do(_ => PlaySounds.instance.Play())
+        .Subscribe()
+        .AddTo(this);
+
+        skipGame2.OnClickAsObservable()
         .Do(_ => EnableSkipScreen())
         .Where(_ => PlaySounds.instance != null)
         .Do(_ => PlaySounds.instance.Play())
