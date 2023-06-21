@@ -21630,6 +21630,7 @@ MonoBehaviour:
   backFromLeaderboard: {fileID: 6916348028416759041}
   tryagain: {fileID: 0}
   skipGame: {fileID: 9123337639459261576}
+  skipGame2: {fileID: 0}
   webloginView: {fileID: 5563223587690245332}
 --- !u!114 &3791616216787861488
 MonoBehaviour:
