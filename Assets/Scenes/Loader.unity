@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a2abb2275190447a24d0e27ffb7dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildType: 1
+  buildType: 0
   game: tutorial
 --- !u!4 &92286877
 Transform:
