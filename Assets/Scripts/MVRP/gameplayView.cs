@@ -99,6 +99,12 @@ public class gameplayView : MonoBehaviour
     {
         string slug;
         slug = name.ToLower().Replace(".", "").Replace("'", "").Replace(" ", "-");
+        if (name == "Red Velvet")
+            slug = "neurotica";
+        if (name == "Mañana")
+            slug = "manana";
+        if (name == "Horatio’d")
+            slug = "horatiod";
         return slug;
 
     }

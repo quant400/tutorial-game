@@ -36,18 +36,18 @@ public class NextGameCanvasScript : MonoBehaviour
         if (g == games.chicken)
         {
             SetText("Go to Chicken Run?");
-            SetLink("http://play.cryptofightclub.io/chicken-run");
+            SetLink("https://play.cryptofightclub.io/chicken-run");
         }
 
         else if (g == games.bear)
         {
             SetText("Go to Fight The Bear?");
-            SetLink("http://play.cryptofightclub.io/fight-the-bear");
+            SetLink("https://play.cryptofightclub.io/fight-the-bear");
         }
         else if (g == games.warrior)
         {
             SetText("Go to Warrior?");
-            SetLink("http://play.cryptofightclub.io/warrior");
+            SetLink("https://play.cryptofightclub.io/warrior");
         }
         panel.DOScale(Vector3.one, 1f).OnComplete(() => Time.timeScale = 0);
         player.GetComponent<StarterAssets.StarterAssetsInputs>().SetCursorLock(false);
